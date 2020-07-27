@@ -1,4 +1,5 @@
 defmodule SocketChat.Chats.Lobby do
+  @moduledoc false
   use Ecto.Schema
   import Ecto.Changeset
 

@@ -1,4 +1,5 @@
 defmodule SocketChatWeb.LobbyChannel do
+  @moduledoc false
   use SocketChatWeb, :channel
 
   @impl true
