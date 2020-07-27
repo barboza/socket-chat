@@ -16,6 +16,9 @@ defmodule SocketChat.DataCase do
 
   use ExUnit.CaseTemplate
 
+  alias Ecto.Adapters.SQL.Sandbox
+  alias SocketChat.Repo
+
   using do
     quote do
       alias SocketChat.Repo
@@ -28,10 +31,10 @@ defmodule SocketChat.DataCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(SocketChat.Repo)
+    :ok = Sandbox.checkout(Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(SocketChat.Repo, {:shared, self()})
+      Sandbox.mode(Repo, {:shared, self()})
     end
 
     :ok

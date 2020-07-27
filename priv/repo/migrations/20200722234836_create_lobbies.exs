@@ -9,6 +9,5 @@ defmodule SocketChat.Repo.Migrations.CreateLobbies do
 
       timestamps()
     end
-
   end
 end

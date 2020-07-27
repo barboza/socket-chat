@@ -11,9 +11,6 @@ defmodule SocketChatWeb.LobbyView do
   end
 
   def render("lobby.json", %{lobby: lobby}) do
-    %{id: lobby.id,
-      name: lobby.name,
-      max_players: lobby.max_players,
-      public: lobby.public}
+    %{id: lobby.id, name: lobby.name, max_players: lobby.max_players, public: lobby.public}
   end
 end

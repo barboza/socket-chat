@@ -22,7 +22,7 @@ jobs:
     - name: Setup elixir
       uses: actions/setup-elixir@v1
       with:
-        elixir-version: 1.9.4 # Define the elixir version [required]
+        elixir-version: 1.10.0 # Define the elixir version [required]
         otp-version: 22.2 # Define the OTP version [required]
     - uses: actions/cache@v1
       with:
@@ -32,5 +32,9 @@ jobs:
           ${{ runner.os }}-mix-
     - name: Install Dependencies
       run: mix deps.get
+    - name: Check Formatting
+      run: mix format --check-formatted
+    - name: Code Analysis
+      run: mix credo --strict
     - name: Run Tests
       run: mix test
