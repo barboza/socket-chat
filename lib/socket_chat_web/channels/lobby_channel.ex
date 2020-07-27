@@ -2,7 +2,7 @@ defmodule SocketChatWeb.LobbyChannel do
   use SocketChatWeb, :channel
 
   @impl true
-  def join("lobby:lobby", payload, socket) do
+  def join("lobby:1", payload, socket) do
     if authorized?(payload) do
       {:ok, socket}
     else
@@ -21,7 +21,7 @@ defmodule SocketChatWeb.LobbyChannel do
   # broadcast to everyone in the current topic (lobby:lobby).
   @impl true
   def handle_in("shout", payload, socket) do
-    broadcast socket, "shout", payload
+    broadcast(socket, "shout", payload)
     {:noreply, socket}
   end
 
