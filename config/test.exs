@@ -13,7 +13,7 @@ config :socket_chat, SocketChat.Repo,
   pool: Ecto.Adapters.SQL.Sandbox
 
 if System.get_env("GITHUB_ACTIONS") do
-  config :my_app, SocketChat.Repo,
+  config :socket_chat, SocketChat.Repo,
     username: "postgres",
     password: "postgres"
 end
